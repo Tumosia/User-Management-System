@@ -1,4 +1,0 @@
-mysqli_sql_exception: Duplicate entry 'cheroptumosia@gmail.com' for key 'email' in C:\xampp\htdocs\crud_php\users.php:14
-Stack trace:
-#0 C:\xampp\htdocs\crud_php\users.php(14): mysqli->query('INSERT INTO use...')
-#1 {main}
