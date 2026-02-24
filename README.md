@@ -2,16 +2,6 @@
 
 A professional PHP CRUD application with MVC-inspired architecture.
 
- # PHP CRUD Application
-
-A modern PHP CRUD app with authentication and a modal-driven, AJAX-powered dashboard.
-
-**What's changed**
-- Replaced separate add/edit pages with a reusable modal (AJAX form submits).
-- Controllers centralized: [src/controllers/AuthController.php](src/controllers/AuthController.php) and [src/controllers/UserController.php](src/controllers/UserController.php).
-- AJAX endpoint for create/update lives in [views/users/process-user.php](views/users/process-user.php).
-- Dashboard UI updated with a custom color palette: `#C8D9E6`, `#F5EFEB`, `#FFFFFF`.
-
 **Project layout**
 
 ```
@@ -72,29 +62,6 @@ http://localhost/crud_php/public/index.php
   - Row-level Edit/Delete and multi-select mass delete.
   - Client-side search that filters rows using `data-name` / `data-email` attributes.
 - UI uses Bootstrap 4, SweetAlert for notifications, and a small amount of custom CSS (colors: `#C8D9E6`, `#F5EFEB`, `#FFFFFF`).
-
-## Developer notes
-
-- Modal & AJAX: [views/users/dashboard.php](views/users/dashboard.php) contains the modal markup plus the JS functions `openModal(mode, userData)`, form submit handler, `delUser()`, and `massDel()`.
-- AJAX handler: [views/users/process-user.php](views/users/process-user.php) expects POST fields like `mode`, `name`, `email`, and `user_id` and returns JSON responses.
-- Session keys: logged-in state is stored in session variables set by `AuthController`.
-
-## Security (important)
-
-- Current codebase still contains non-parameterized SQL in some places. Before using in production, convert all DB queries to prepared statements (mysqli->prepare / bind_param) or use an ORM.
-- Add CSRF protection for form submissions (especially for AJAX endpoints).
-
-## UX / Visual
-
-- The dashboard was redesigned to use a soft pastel palette and more compact action buttons aligned above the "Actions" table column.
-- If you'd like a different alignment or palette, edit the CSS variables at the top of [views/users/dashboard.php](views/users/dashboard.php).
-
-## Future improvements
-
-- Migrate queries to prepared statements
-- Add role-based access control
-- Add unit/integration tests and CI checks
-- Extract inline CSS/JS from `dashboard.php` into separate assets
 
 ## Troubleshooting
 
